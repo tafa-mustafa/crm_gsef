@@ -26,23 +26,26 @@
                             {{ trans('cruds.project.fields.id') }}
                         </th>
                         <th>
-                            {{ trans('cruds.project.fields.name') }}
+                            {{ trans('Nom Organisation') }}
                         </th>
                         <th>
                             {{ trans('cruds.project.fields.client') }}
                         </th>
                         <th>
-                            {{ trans('cruds.project.fields.description') }}
+                            {{ trans('Type Organisation') }}
                         </th>
                         <th>
-                            {{ trans('cruds.project.fields.start_date') }}
+                            {{ trans('Region') }}
                         </th>
                         <th>
-                            {{ trans('cruds.project.fields.budget') }}
+                            {{ trans("Departement") }}
                         </th>
                         <th>
-                            {{ trans('cruds.project.fields.status') }}
+                            {{ trans('Statut Oraganisation') }}
                         </th>
+
+                        
+
                         <th>
                             &nbsp;
                         </th>
@@ -58,22 +61,22 @@
                                 {{ $project->id ?? '' }}
                             </td>
                             <td>
-                                {{ $project->name ?? '' }}
+                                {{ $project->nom_organisation ?? '' }}
                             </td>
                             <td>
                                 {{ $project->client->first_name ?? '' }}
                             </td>
                             <td>
-                                {{ $project->description ?? '' }}
+                                {{ $project->type ?? '' }}
                             </td>
                             <td>
-                                {{ $project->start_date ?? '' }}
+                                {{ $project->region ?? '' }}
                             </td>
                             <td>
-                                {{ $project->budget ?? '' }}
+                                {{ $project->departement ?? '' }}
                             </td>
                             <td>
-                                {{ $project->status->name ?? '' }}
+                                {{ $project->statut_organisation ?? '' }}
                             </td>
                             <td>
                                 @can('project_show')
