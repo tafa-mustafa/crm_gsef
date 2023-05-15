@@ -42,6 +42,7 @@ class CreateProjectsTable extends Migration
             $table->longText('montant_secteur_invers_direct_gdh')->nullable();
             $table->longText('montant_secteur_invers_direct_idu')->nullable();
             $table->longText('montant_secteur_invers_direct_sc')->nullable();
+            $table->longText('montant_secteur_invers_direct_cas')->nullable();
             $table->longText('montant_secteur_invers_direct_asap')->nullable();
             $table->longText('montant_secteur_invers_direct_ecb')->nullable();
             $table->longText('montant_secteur_invers_direct_mpg')->nullable();

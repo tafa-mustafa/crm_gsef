@@ -480,7 +480,7 @@
             <div class="form-group {{ $errors->has('montant_secteur_invers_direct_mpg') ? 'has-error' : '' }} input-group mb-3">
                 <span class="input-group-text">{{ "MPG : Mines, Pétroles et Gaz" }}</span>
                 <span class="input-group-text">@</span>
-                <input type="number" id="montant_secteur_invers_direct_mpg" name="montant_secteur_montant_secteur_invers_direct_mpg" class="form-control" value="{{ old('montant_secteur_invers_direct_mpg', isset($project) ? $project->montant_secteur_invers_direct_mpg : '') }}" type="text" class="form-control" placeholder="Montant" aria-label="Server">
+                <input type="number" id="montant_secteur_invers_direct_mpg" name="montant_secteur_invers_direct_mpg" class="form-control" value="{{ old('montant_secteur_invers_direct_mpg', isset($project) ? $project->montant_secteur_invers_direct_mpg : '') }}" type="text" class="form-control" placeholder="Montant" aria-label="Server">
                 @if($errors->has('montant_secteur_invers_direct_mpg'))
                 <p class="help-block">
                     {{ $errors->first('montant_secteur_invers_direct_mpg') }}
@@ -615,12 +615,12 @@
 
                         </div>
 
-                        <div class="form-group {{ $errors->has('partenaire_acdi_canada') ? 'has-error' : '' }} input-group mb-3">
+                        <div class="form-group {{ $errors->has('montant_partenaire_acdi_canada') ? 'has-error' : '' }} input-group mb-3">
                             <span class="input-group-text">{{ "ACDI / Canada" }}</span>
 
                             <span class="input-group-text">@</span>
 
-                            <input type="number" id="partenaire_acdi_canada" name="partenaire_acdi_canada" class="form-control" value="{{ old('montant_partenaire_acdi_canada', isset($project) ? $project->montant_partenaire_acdi_canada : '') }}" type="text" class="form-control" placeholder="Montant" aria-label="Server">
+                            <input type="number" id="partenaire_acdi_canada" name="montant_partenaire_acdi_canada" class="form-control" value="{{ old('montant_partenaire_acdi_canada', isset($project) ? $project->montant_partenaire_acdi_canada : '') }}" type="text" class="form-control" placeholder="Montant" aria-label="Server">
                             @if($errors->has('montant_partenaire_acdi_canada'))
                             <p class="help-block">
                                 {{ $errors->first('montant_partenaire_acdi_canada') }}
@@ -657,7 +657,7 @@
                         
                         <div class="form-group {{ $errors->has('realisation_secteur_invers_direct') ? 'has-error' : '' }}">
                             <label for="realisation_secteur_invers_direct">{{ trans("Realisations par secteur investissement directe") }}*</label>
-                            <select name="realisation_secteur_invers_direct" id="realisation_secteur_invers_direct" class="form-control select2" >
+                            <select name="realisation_secteur_invers_direct" id="realisation_secteur_invers_direct" class="form-control select2" multiple >
                                 <option value={{ old('realisation_secteur_invers_direct', isset($project) ? $project->realisation_secteur_invers_direct : "GDH: Gouvernance/Droits de l'Homme") }}>{{ "GD: Gouvernance/Droits de l’Homme "}}</option>
                                 <option value={{ old('realisation_secteur_invers_direct', isset($project) ? $project->realisation_secteur_invers_direct : "IDU: Infrastructures, Développement Urbain") }}>{{ "IDU: Infrastructures, Développement Urbain" }}</option>
                                 <option value={{ old('realisation_secteur_invers_direct', isset($project) ? $project->realisation_secteur_invers_direct : "SC: Santé Communautaire") }}>{{ "SC: Santé Communautaire" }}</option>

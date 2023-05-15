@@ -313,6 +313,17 @@
                         </td>
                     </tr>
 
+                    <tr>
+                        <th>
+                            {{ trans('Montant en FCFA par secteur investissement directe CAS ') }}
+
+                        </th>
+                        <td>
+                            {{ $project->montant_secteur_invers_direct_cas ?? '' }}
+
+                        </td>
+                    </tr>
+
                      <tr>
                          <th>
                              {{ trans('Montant en FCFA par secteur investissement directe ASAP') }}
