@@ -36,7 +36,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('Satatut Oragnisatioen') }}
+                            {{ trans('Statut Oragnisation') }}
                         </th>
                         <td>
                             {!! $project->statut_organisation !!}
@@ -44,7 +44,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('Type Organition') }}
+                            {{ trans('Type Organisation') }}
                         </th>
                         <td>
                             {{ $project->type }}
@@ -216,7 +216,7 @@
 
                         </th>
                         <td>
-                            {{ $project->nombre_projet_asp ?? '' }}
+                            {{ $project->nombre_projet_asap ?? '' }}
 
                         </td>
                     </tr>
@@ -379,14 +379,6 @@
                          </td>
                      </tr>
 
-
-
-
-
-
-
-
-
                     <tr>
                         <th>
                             {{ trans('Montant mobilisé au niveau International') }}
@@ -499,9 +491,6 @@
 
                          </td>
                      </tr>
-
-
-
                     <tr>
                         <th>
                             {{ trans('REALISATIONS PAR SECTEUR INVESTISSEMENT DIRECTE') }}

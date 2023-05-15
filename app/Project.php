@@ -65,7 +65,7 @@ class Project extends Model
         'montant_secteur_invers_direct_gdh',
         'montant_secteur_invers_direct_idu',
         'montant_secteur_invers_direct_sc',
-        'montant_secteur_invers_direct_asap',
+        'montant_secteur_invers_direct_asap', 
         'montant_secteur_invers_direct_ecb',
         'montant_secteur_invers_direct_mpg',
         'montant_secteur_invers_direct_eha',

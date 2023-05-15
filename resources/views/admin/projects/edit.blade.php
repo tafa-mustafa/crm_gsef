@@ -1,20 +1,18 @@
 @extends('layouts.admin')
 @section('content')
 
-@extends('layouts.admin')
-@section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.edite') }} {{ trans('cruds.project.title_singular') }}
+        {{ trans('global.edit') }} {{ trans('cruds.project.title_singular') }}
     </div>
 
     <div class="card-body">
-            <form action="{{ route("admin.projects.update", [$project->id]) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route("admin.projects.update", [$project->id]) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-
-            <div class="form-group {{ $errors->has('nom_organisation') ? 'has-error' : '' }}">
+            
+                <div class="form-group {{ $errors->has('nom_organisation') ? 'has-error' : '' }}">
                 <label for="nom_organisation">{{ trans("Nom d'organisation") }}</label>
                 <input type="text" id="nom_organisation" name="nom_organisation" class="form-control" value="{{ old('nom_organisation', isset($project) ? $project->nom_organisation : '') }}" required>
 
@@ -33,10 +31,7 @@
                     <option value="">{{ "Select"}}</option>
                     <option value={{ old('statut_organisation', isset($project) ? $project->statut_organisation : "ONG") }}>{{ "ONG"}}</option>
                     <option value={{ old('statut_organisation', isset($project) ? $project->statut_organisation : "Association") }}>{{ "Association"}}</option>
-
-
                 </select>
-
 
                 @if($errors->has('statut_organisation'))
                 <p class="help-block">
@@ -68,12 +63,6 @@
                 <label for="region">{{ trans('Region') }}*</label>
                 <input type="text" id="region" name="region" class="form-control" value="{{ old('region', isset($project) ? $project->region : '') }}">
 
-
-
-
-
-
-
                 @if($errors->has('region'))
                 <p class="help-block">
                     {{ $errors->first('region') }}
@@ -95,8 +84,6 @@
 
             </div>
 
-
-
             <div class="form-group {{ $errors->has('nombre_emplois') ? 'has-error' : '' }}">
                 <label for="nombre_emplois">{{ trans("Nombre d'emploi (s)") }}*</label>
                 <input type="number" id="nombre_emplois" name="nombre_emplois" class="form-control" value="{{ old('nombre_emplois', isset($project) ? $project->nombre_emplois : '') }}" required>
@@ -111,9 +98,6 @@
                     {{ trans('cruds.project.fields.name_helper') }}
                 </p>
             </div>
-
-
-
 
             <div class="form-group {{ $errors->has('nombre_homme') ? 'has-error' : '' }}">
                 <label for="nombre_homme">{{ trans("Nombre d'hommes") }}</label>
@@ -203,9 +187,6 @@
                 </p>
             </div>
 
-
-
-
             <div class="form-group {{ $errors->has('nombre_temporaire') ? 'has-error' : '' }}">
                 <label for="nombre_temporaire">{{ trans("Nombre temporaire") }}*</label>
 
@@ -237,10 +218,6 @@
 
             </div>
 
-
-
-
-
             <div class="form-group {{ $errors->has('nombre_stagiaire') ? 'has-error' : '' }}">
                 <label for="nombre_stagiaire">{{ trans("Nombre de stagiaire") }}*</label>
 
@@ -269,8 +246,6 @@
                 @endif
 
             </div>
-
-
 
             <div class="form-group {{ $errors->has('secteur_intervation') ? 'has-error' : '' }}">
                 <label for="secteur_intervation">{{ trans("Realisations par secteur investissement directe") }}*</label>
@@ -419,13 +394,6 @@
 
             </div>
 
-
-
-
-
-
-
-
             {{-- montant secteur --}}
             <div> <label for="secteur_intervation">{{ trans("Montant en FCFA par secteur investissement directe") }}</label></div>
 
@@ -472,11 +440,6 @@
                 <span class="input-group-text">{{ "CAS : Culture Artisanat et Loisir" }}</span>
                 <span class="input-group-text">@</span>
                 <input type="number" id="montant_secteur_invers_direct_cas" name="montant_secteur_invers_direct_cas" class="form-control" value="{{ old('montant_secteur_invers_direct_cas', isset($project) ? $project->montant_secteur_invers_direct_cas : '') }}" type="text" class="form-control" placeholder="Montant" aria-label="Server">
-
-
-
-
-
                 @if($errors->has('montant_secteur_invers_direct_cas'))
 
                 <p class="help-block">
@@ -511,7 +474,7 @@
             <div class="form-group {{ $errors->has('montant_secteur_montant_secteur_invers_direct_mpg') ? 'has-error' : '' }} input-group mb-3">
                 <span class="input-group-text">{{ "MPG : Mines, Pétroles et Gaz" }}</span>
                 <span class="input-group-text">@</span>
-                <input type="number" id="montant_secteur_montant_secteur_invers_direct_mpg" name="montant_secteur_montant_secteur_invers_direct_mpg" class="form-control" value="{{ old('nombre_projet_mpg', isset($project) ? $project->montant_secteur_montant_secteur_invers_direct_mpg : '') }}" type="text" class="form-control" placeholder="Montant" aria-label="Server">
+                <input type="number" id="montant_secteur_montant_secteur_invers_direct_mpg" name="montant_secteur_montant_secteur_invers_direct_mpg" class="form-control" value="{{ old('montant_secteur_invers_direct_mpg', isset($project) ? $project->montant_secteur_invers_direct_mpg : '') }}" type="text" class="form-control" placeholder="Montant" aria-label="Server">
                 @if($errors->has('montant_secteur_montant_secteur_invers_direct_mpg'))
                 <p class="help-block">
                     {{ $errors->first('montant_secteur_montant_secteur_invers_direct_mpg') }}
@@ -537,7 +500,7 @@
             <div class="form-group {{ $errors->has('montant_secteur_invers_direct_epf') ? 'has-error' : '' }} input-group mb-3">
                 <span class="input-group-text">{{ "EPF : Education et Formation Professionnelle" }}</span>
                 <span class="input-group-text">@</span>
-                <input type="number" id="montant_secteur_invers_direct_epf" name="montant_secteur_invers_direct_epf" class="form-control" value="{{ old('montant_secteur_montant_secteur_invers_direct_epf', isset($project) ? $project->montant_secteur_montant_secteur_invers_direct_epf : '') }}" type="text" class="form-control" placeholder="Montant" aria-label="Server">
+                <input type="number" id="montant_secteur_invers_direct_epf" name="montant_secteur_invers_direct_epf" class="form-control" value="{{ old('montant_secteur_invers_direct_epf', isset($project) ? $project->montant_secteur_invers_direct_epf : '') }}" type="text" class="form-control" placeholder="Montant" aria-label="Server">
                 @if($errors->has('montant_secteur_invers_direct_epf'))
                 <p class="help-block">
                     {{ $errors->first('montant_secteur_invers_direct_epf') }}
@@ -574,17 +537,9 @@
 
             </div>
 
-
-
-
             <div class="form-group {{ $errors->has('montant_national') ? 'has-error' : '' }}">
                 <label for="montant_national">{{ trans("Montant mobilisé au niveau national") }}</label>
-
-
                 <input type='number' id="montant_national" name="montant_national" class="form-control " value="{{ old('montant_national', isset($project) ? $project->montant_national : '') }}">
-
-
-
 
                 @if($errors->has('montant_national'))
                 <p class="help-block">
@@ -605,9 +560,6 @@
                 @endif
 
             </div>
-
-
-
 
             <div class="form-group {{ $errors->has('montant_fonds_propre') ? 'has-error' : '' }}">
                 <label for="montant_fonds_propre">{{ trans("Montant mobilisé sur fonds propres") }}</label>
@@ -649,15 +601,15 @@
                 @endif
 
             </div>
-            <div class="form-group {{ $errors->has('partenaire_acdi_canada') ? 'has-error' : '' }} input-group mb-3">
+            <div class="form-group {{ $errors->has('montant_partenaire_acdi_canada') ? 'has-error' : '' }} input-group mb-3">
                 <span class="input-group-text">{{ "ACDI / Canada" }}</span>
 
                 <span class="input-group-text">@</span>
 
-                <input type="number" id="partenaire_acdi_canada" name="partenaire_acdi_canada" class="form-control" value="{{ old('partenaire_acdi_canada', isset($project) ? $project->partenaire_acdi_canada : '') }}" type="text" class="form-control" placeholder="Montant" aria-label="Server">
-                @if($errors->has('partenaire_acdi_canada'))
+                <input type="number" id="partenaire_acdi_canada" name="partenaire_acdi_canada" class="form-control" value="{{ old('montant_partenaire_acdi_canada', isset($project) ? $project->montant_partenaire_acdi_canada : '') }}" type="text" class="form-control" placeholder="Montant" aria-label="Server">
+                @if($errors->has('montant_partenaire_acdi_canada'))
                 <p class="help-block">
-                    {{ $errors->first('partenaire_acdi_canada') }}
+                    {{ $errors->first('montant_partenaire_acdi_canada') }}
                 </p>
                 @endif
 
@@ -687,16 +639,6 @@
                 @endif
 
             </div>
-
-
-
-
-
-
-
-
-
-
 
             <div class="form-group {{ $errors->has('realisation_secteur_invers_direct') ? 'has-error' : '' }}">
                 <label for="realisation_secteur_invers_direct">{{ trans("Realisations par secteur investissement directe") }}*</label>
@@ -753,8 +695,6 @@
             <div class="form-group {{ $errors->has('nombre_jeune_benef') ? 'has-error' : '' }}">
                 <label for="nombre_jeune_benef">{{ trans("Nombre de jeunes BENEFICIAIRES") }}</label>
 
-
-
                 <input type="number" id="nombre_jeune_benef" name="nombre_jeune_benef" class="form-control" value="{{ old('nombre_jeune_benef', isset($project) ? $project->nombre_jeune_benef : '') }}">
 
                 @if($errors->has('nombre_jeune_benef'))
@@ -771,13 +711,7 @@
             <div class="form-group {{ $errors->has('nombre_handicape_benef') ? 'has-error' : '' }}">
                 <label for="nombre_handicape_benef">{{ trans("Nombre de handicapes BENEFICIAIRES") }}</label>
 
-
-
                 <input type="number" id="nombre_handicape_benef" name="nombre_handicape_benef" class="form-control" value="{{ old('nombre_handicape_benef', isset($project) ? $project->nombre_handicape_benef : '') }}">
-
-
-
-
 
                 @if($errors->has('nombre_handicape_benef'))
                 <p class="help-block">
@@ -788,12 +722,6 @@
                     {{ trans('cruds.project.fields.name_helper') }}
                 </p>
             </div>
-
-
-
-
-
-
 
             <div class="form-group {{ $errors->has('client_id') ? 'has-error' : '' }}">
                 <label for="client">{{ trans('cruds.project.fields.client') }}*</label>
@@ -857,6 +785,7 @@
                 </p>
                 @endif
             </div>
+           
             <div>
                 <input class="btn btn-success" type="submit" value="{{ trans('global.save') }}">
             </div>

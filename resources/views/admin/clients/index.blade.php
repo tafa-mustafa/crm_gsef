@@ -22,15 +22,15 @@
                         <th width="10">
 
                         </th>
-                        <th>
+                        <!-- <th>
                             {{ trans('cruds.client.fields.id') }}
-                        </th>
+                        </th> -->
                         <th>
                             {{ trans('cruds.client.fields.first_name') }}
                         </th>
-                        <th>
+                        <!-- <th>
                             {{ trans('cruds.client.fields.last_name') }}
-                        </th>
+                        </th> -->
                         <th>
                             {{ trans('cruds.client.fields.company') }}
                         </th>
@@ -40,12 +40,12 @@
                         <th>
                             {{ trans('cruds.client.fields.phone') }}
                         </th>
-                        <th>
+                        <!-- <th>
                             {{ trans('cruds.client.fields.website') }}
-                        </th>
-                        <th>
+                        </th> -->
+                        <!-- <th>
                             {{ trans('cruds.client.fields.skype') }}
-                        </th>
+                        </th> -->
                         <th>
                             {{ trans('cruds.client.fields.country') }}
                         </th>
@@ -63,15 +63,15 @@
                             <td>
 
                             </td>
-                            <td>
+                            <!-- <td>
                                 {{ $client->id ?? '' }}
-                            </td>
+                            </td> -->
                             <td>
-                                {{ $client->first_name ?? '' }}
+                                {{ $client->first_name ?? '' }}  {{ $client->last_name ?? '' }}
                             </td>
-                            <td>
+                            <!-- <td>
                                 {{ $client->last_name ?? '' }}
-                            </td>
+                            </td> -->
                             <td>
                                 {{ $client->company ?? '' }}
                             </td>
@@ -81,12 +81,12 @@
                             <td>
                                 {{ $client->phone ?? '' }}
                             </td>
-                            <td>
+                            <!-- <td>
                                 {{ $client->website ?? '' }}
-                            </td>
-                            <td>
+                            </td> -->
+                            <!-- <td>
                                 {{ $client->skype ?? '' }}
-                            </td>
+                            </td> -->
                             <td>
                                 {{ $client->country ?? '' }}
                             </td>

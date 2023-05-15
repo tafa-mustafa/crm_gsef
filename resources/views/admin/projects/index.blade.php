@@ -22,9 +22,9 @@
                         <th width="10">
 
                         </th>
-                        <th>
+                        <!-- <th>
                             {{ trans('cruds.project.fields.id') }}
-                        </th>
+                        </th> -->
                         <th>
                             {{ trans('Nom Organisation') }}
                         </th>
@@ -44,8 +44,6 @@
                             {{ trans('Statut Oraganisation') }}
                         </th>
 
-                        
-
                         <th>
                             &nbsp;
                         </th>
@@ -57,9 +55,9 @@
                             <td>
 
                             </td>
-                            <td>
+                            <!-- <td>
                                 {{ $project->id ?? '' }}
-                            </td>
+                            </td> -->
                             <td>
                                 {{ $project->nom_organisation ?? '' }}
                             </td>
@@ -81,13 +79,13 @@
                             <td>
                                 @can('project_show')
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.projects.show', $project->id) }}">
-                                        {{ trans('global.view') }}
+                                         <i class="fa fa-eye"></i>
                                     </a>
                                 @endcan
 
                                 @can('project_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.projects.edit', $project->id) }}">
-                                        {{ trans('global.edit') }}
+                                        <i class="fa fa-pen"></i>
                                     </a>
                                 @endcan
 
@@ -95,7 +93,7 @@
                                     <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
+                                        <a type="submit" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> </a>
                                     </form>
                                 @endcan
 
